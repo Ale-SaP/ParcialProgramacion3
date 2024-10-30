@@ -18,17 +18,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 
 <section id="registro" class="section">
-    <h2>Registro</h2>   
+    <h2 class="text-4xl">Registro</h2>
     <?php if (isset($error_message)): ?>
-        <p style="color:red;"><?php echo htmlspecialchars($error_message); ?></p>
+        <div role="alert" class="alert alert-error mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+            <span><?php echo htmlspecialchars($error_message); ?></span>
+        </div>
     <?php endif; ?>
-    <form action="index.php?modulo=ansp_registro" method="POST">
-        <label for="nombre">Nombre de Usuario:</label>
-        <input type="text" id="nombre" name="nombre" required>
+    <form action="index.php?modulo=ansp_registro" method="POST" class="flex flex-col input-primary">
+        <label for="nombre" class="mt-8">Nombre de Usuario:</label>
+        <input type="text" id="nombre" name="nombre" class="input-primary mb-4" required>
 
-        <label for="clave">Contraseña:</label>
-        <input type="password" id="clave" name="clave" required>
+        <label for="clave" class="mt-8">Contraseña:</label>
+        <input type="password" id="clave" name="clave" class="input-primary mb-4" required>
 
-        <button type="submit">Registrarse</button>
+        <button type="submit" class="mt-8 btn btn-primary">Registrarse</button>
     </form>
 </section>
