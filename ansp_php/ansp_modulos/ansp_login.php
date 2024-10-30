@@ -10,12 +10,12 @@ if (isset($_GET['error']) && $_GET['error'] == 1) {
     <?php if ($error): ?>
         <p style="color:red;"><?php echo htmlspecialchars($error); ?></p>
     <?php endif; ?>
-    <form action="index.php?modulo=procesar_login" method="POST">
-        <label for="login-username">Nombre de Usuario:</label>
-        <input type="text" id="login-username" name="login-username" required>
+    <form action="index.php?modulo=ansp_procesar_login" method="POST">
+        <label for="nombre">Nombre de Usuario:</label>
+        <input type="text" id="nombre" name="nombre" required>
 
-        <label for="login-password">Contraseña:</label>
-        <input type="password" id="login-password" name="login-password" required>
+        <label for="clave">Contraseña:</label>
+        <input type="password" id="clave" name="clave" required>
 
         <button type="submit">Iniciar Sesión</button>
     </form>

@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['nombre'])) {
     header('Location: index.php?modulo=ansp_login');
     exit();
 }
@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php if (isset($error_message)): ?>
         <p style="color:red;"><?php echo htmlspecialchars($error_message); ?></p>
     <?php endif; ?>
-    <form action="index.php?modulo=ansp_admin" method="POST">
+    <form action="index.php?modulo=ansp_publicar" method="POST">
         <label for="titulo">Título:</label>
         <input type="text" id="titulo" name="titulo" required>
 

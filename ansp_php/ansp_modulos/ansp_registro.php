@@ -1,8 +1,8 @@
 <?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['username'], $_POST['password'])) {
-        $username = trim($_POST['username']);
-        $password = trim($_POST['password']);
+    if (isset($_POST['nombre'], $_POST['clave'])) {
+        $username = trim($_POST['nombre']);
+        $password = trim($_POST['clave']);
         try {
             $stmt = $pdo->prepare('INSERT INTO usuario (nombre, clave) VALUES (?, ?)');
             $stmt->execute([$username, $password]);
